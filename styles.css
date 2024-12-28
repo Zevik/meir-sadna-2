@@ -111,6 +111,114 @@ h2 {
     font-size: 1.1rem;
 }
 
+.section-title {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--primary);
+    margin: 4rem 0 2rem;
+}
+
+.meetings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.meeting-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.meeting-number {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: var(--primary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.contact-form button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    transform: scale(1.02);
+}
+
+footer {
+    background: var(--primary);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: white;
+    color: var(--primary);
+}
+
 @media (max-width: 768px) {
     header {
         padding: 6rem 1rem 4rem;
@@ -133,5 +241,13 @@ h2 {
 
     .info-card p {
         font-size: 1rem;
+    }
+    
+    .meetings-grid {
+        padding: 1rem;
+    }
+    
+    .contact-form {
+        padding: 1rem;
     }
 }
