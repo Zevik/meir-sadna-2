@@ -28,13 +28,35 @@ body {
 
 header {
     text-align: center;
-    padding: 8rem 1rem 6rem;
+    padding: 6rem 1rem 8rem;
     background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
     border-radius: 0 0 100px 100px;
     margin-bottom: 6rem;
     color: white;
     box-shadow: 0 4px 30px rgba(108, 92, 231, 0.2);
     animation: fadeInUp 1s ease-out;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    animation: fadeInUp 1.2s ease-out 0.5s both;
+}
+
+.intro-text p {
+    margin: 0.8rem 0;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    line-height: 1.8;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.intro-text p:not(:last-child) {
+    margin-bottom: 1rem;
 }
 
 h1 {
@@ -175,6 +197,11 @@ h2 {
     outline: none;
 }
 
+.contact-form input[type="tel"] {
+    text-align: right;
+    direction: ltr;
+}
+
 .contact-form button {
     background: var(--primary);
     color: white;
@@ -219,11 +246,151 @@ footer {
     color: var(--primary);
 }
 
+.workshop-details {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    padding: 4rem 2rem;
+    color: white;
+    margin: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.workshop-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+}
+
+.details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.workshop-details .section-title {
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.time-details, .techniques-list {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.time-details h3, .techniques-list h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.time-details h3::after, .techniques-list h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1px;
+}
+
+.techniques-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.techniques-list li {
+    margin: 1rem 0;
+    padding-right: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.techniques-list li::before {
+    content: '•';
+    position: absolute;
+    right: 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.important-notes {
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+    background: linear-gradient(135deg, #f6f7fb 0%, #ffffff 100%);
+}
+
+.notes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.note-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    border-right: 4px solid var(--primary);
+    animation: fadeInUp 1s ease-out;
+}
+
+.note-card h3 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.note-card p {
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.note-card.disclaimer {
+    border-right-color: #e74c3c;
+}
+
+.note-card.disclaimer h3 {
+    color: #e74c3c;
+}
+
+.note-card.cancellation {
+    border-right-color: #2ecc71;
+}
+
+.note-card.cancellation h3 {
+    color: #2ecc71;
+}
+
 @media (max-width: 768px) {
     header {
         padding: 6rem 1rem 4rem;
         border-radius: 0 0 50px 50px;
         margin-bottom: 4rem;
+    }
+
+    .intro-text {
+        padding: 1.5rem;
+        margin: 2rem auto 0;
+    }
+    
+    .intro-text p {
+        font-size: 1rem;
+        line-height: 1.6;
     }
 
     .info-cards {
@@ -249,5 +416,31 @@ footer {
     
     .contact-form {
         padding: 1rem;
+    }
+
+    .details-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .workshop-details {
+        padding: 3rem 1.5rem;
+        margin: 3rem 0;
+    }
+
+    .time-details, .techniques-list {
+        padding: 1.5rem;
+    }
+
+    .important-notes {
+        padding: 3rem 1.5rem;
+    }
+    
+    .note-card {
+        padding: 1.5rem;
+    }
+    
+    .note-card p {
+        font-size: 1rem;
     }
 }
