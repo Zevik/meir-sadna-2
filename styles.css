@@ -458,4 +458,42 @@ footer {
     .note-card p {
         font-size: 1rem;
     }
+
+    .price-tag {
+        padding: 0.8rem 1.2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .price-tag strong {
+        font-size: 1.3rem;
+    }
+}
+
+.time-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.price-tag {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.price-tag span {
+    font-size: 1.1rem;
+}
+
+.price-tag strong {
+    font-size: 1.4rem;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
