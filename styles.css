@@ -297,7 +297,7 @@ footer {
 
 .workshop-details .section-title {
     color: white;
-    margin: 0 0 2rem; /* ביטול margin למעלה */
+    margin: 0 0 1.5rem;
 }
 
 .time-details, .techniques-list {
@@ -519,8 +519,8 @@ footer {
 }
 
 .price-section {
-    padding: 2rem;
-    margin: 4rem 0;
+    padding: 1rem 2rem;
+    margin: 2rem 0;
     text-align: center;
 }
 
@@ -573,4 +573,14 @@ footer {
 
 .whatsapp-link:hover {
     opacity: 0.8;
+}
+
+.workshop-details .section-title,
+.price-section .section-title,
+.registration .section-title {
+    margin: 0 0 1.5rem;
+}
+
+.registration {
+    padding-top: 1rem;
 }
